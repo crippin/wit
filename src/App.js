@@ -4,7 +4,6 @@ import Recorder from 'react-mp3-recorder'
 import ReactAudioPlayer from 'react-audio-player'
 
 import blobToBuffer from 'blob-to-buffer'
-import ribbon from './ribbon.png'
 
 export default class App extends Component {
   state = {
@@ -18,19 +17,6 @@ export default class App extends Component {
 
     return (
       <div>
-        <a href='https://github.com/transitive-bullshit/react-mp3-recorder'>
-          <img
-            src={ribbon}
-            alt='Fork me on GitHub'
-            style={{
-              position: 'absolute',
-              top: 0,
-              right: 0,
-              border: 0
-            }}
-          />
-        </a>
-
         <div
           style={{
             display: 'flex',
@@ -79,7 +65,7 @@ export default class App extends Component {
       }
 
       console.log('recording', blob)
-      
+
       $.ajax({
         type: 'POST',
         url: 'https://api.wit.ai/speech?v=20181126',
